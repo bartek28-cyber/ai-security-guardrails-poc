@@ -11,6 +11,10 @@ The architecture simulates a corporate AI HR assistant connected to an internal 
 3. **Application Layer:** Operational `Llama 3` processing verified requests.
 4. **Monitoring (SOC Integration):** Any triggered threat mitigation logs structured event data in standardized **JSON format**, designed for direct SIEM ingestion (e.g., Wazuh, ELK).
 
+In a production environment, this FastAPI application should be deployed behind a Reverse Proxy (e.g., Nginx) or an API Gateway
+with rate-limiting enabled to protect the backend Ollama infrastructure from Denial of Service (DoS) attacks. Network-level isolation
+(VPCs, Security Groups) should be applied to ensure the Ollama port (11434) is only accessible by the application layer
+
 ### 🛡️ System Threat Model & Risk Analysis (OWASP LLM & Network Alignment)
 
 | Threat Vector / Vector Ataku | OWASP LLM ID / Tech Class | Mitigation Implemented / Wdrożona Mitygacja |
