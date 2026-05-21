@@ -18,7 +18,7 @@ The architecture simulates a corporate AI HR assistant connected to an internal 
 | **Direct Prompt Injection** | LLM01: Prompt Injection | Advanced two-stage pipeline utilizing **Llama 3** as a real-time autonomous security judge. |
 | **Sensitive Data Exfiltration** | LLM06: Sensitive Info Disclosure | Isolated query pipeline with strict limits on data extraction from the internal SQLite repository. |
 | **Unauthorized API Ingestion** | OWASP API: Broken Auth | Hardened endpoint protection enforcing strict HTTP Bearer Token authentication via FastAPI. |
-| **System Telemetry Tampering** | Tradycyjne: Log Injection | Immutable, structured JSON logging (`secure_logging.py`) ready for native external SIEM (Wazuh/ELK) ingestion. |
+| **System Telemetry Tampering** | Traditional: Log Injection | Immutable, structured JSON logging (`secure_logging.py`) ready for native external SIEM (Wazuh/ELK) ingestion. |
 
 ## SIEM-Ready Telemetry Example
 When a semantic manipulation attack is deflected, the system produces structured logs optimized for automated SOC alerting pipelines:
