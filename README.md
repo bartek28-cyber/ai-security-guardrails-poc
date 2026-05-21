@@ -24,6 +24,4 @@ When a semantic manipulation attack is deflected, the system produces structured
   "severity": "HIGH"
 }
 
-Semantic Firewalls: Traditional network edge devices (WAF/IPS) cannot interpret payload linguistics; therefore, context-aware semantic guardrails are required.
 
-Deterministic Access Boundaries: AI models must never possess direct write/delete capabilities over persistence layers; hardcoded application security principles override model instructions.
