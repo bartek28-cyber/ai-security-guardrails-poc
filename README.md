@@ -11,6 +11,15 @@ The architecture simulates a corporate AI HR assistant connected to an internal 
 3. **Application Layer:** Operational `Llama 3` processing verified requests.
 4. **Monitoring (SOC Integration):** Any triggered threat mitigation logs structured event data in standardized **JSON format**, designed for direct SIEM ingestion (e.g., Wazuh, ELK).
 
+### 🛡️ System Threat Model & Risk Analysis (OWASP LLM & Network Alignment)
+
+| Threat Vector / Vector Ataku | OWASP LLM ID / Tech Class | Mitigation Implemented / Wdrożona Mitygacja |
+| :--- | :--- | :--- |
+| **Direct Prompt Injection** | LLM01: Prompt Injection | Advanced two-stage pipeline utilizing **Llama 3** as a real-time autonomous security judge. |
+| **Sensitive Data Exfiltration** | LLM06: Sensitive Info Disclosure | Isolated query pipeline with strict limits on data extraction from the internal SQLite repository. |
+| **Unauthorized API Ingestion** | OWASP API: Broken Auth | Hardened endpoint protection enforcing strict HTTP Bearer Token authentication via FastAPI. |
+| **System Telemetry Tampering** | Tradycyjne: Log Injection | Immutable, structured JSON logging (`secure_logging.py`) ready for native external SIEM (Wazuh/ELK) ingestion. |
+
 ## SIEM-Ready Telemetry Example
 When a semantic manipulation attack is deflected, the system produces structured logs optimized for automated SOC alerting pipelines:
 
